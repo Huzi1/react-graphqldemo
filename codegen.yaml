@@ -1,0 +1,6 @@
+# codegen.yaml
+schema: https://rickandmortyapi.com/graphql/
+generates:
+  ./src/types.ts:
+    plugins:
+      - typescript
