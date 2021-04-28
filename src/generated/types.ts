@@ -18,40 +18,24 @@ export enum CacheControlScope {
   Public = 'PUBLIC',
   Private = 'PRIVATE'
 }
-
+export interface CharacterData {
+  characters: Characters
+}
 export type Character = {
-  __typename?: 'Character';
-  /** The id of the character. */
-  id?: Maybe<Scalars['ID']>;
-  /** The name of the character. */
-  name?: Maybe<Scalars['String']>;
-  /** The status of the character ('Alive', 'Dead' or 'unknown'). */
-  status?: Maybe<Scalars['String']>;
-  /** The species of the character. */
-  species?: Maybe<Scalars['String']>;
-  /** The type or subspecies of the character. */
-  type?: Maybe<Scalars['String']>;
-  /** The gender of the character ('Female', 'Male', 'Genderless' or 'unknown'). */
-  gender?: Maybe<Scalars['String']>;
-  /** The character's origin location */
-  origin?: Maybe<Location>;
-  /** The character's last known location */
-  location?: Maybe<Location>;
-  /**
-   * Link to the character's image.
-   * All images are 300x300px and most are medium shots or portraits since they are intended to be used as avatars.
-   */
-  image?: Maybe<Scalars['String']>;
-  /** Episodes in which this character appeared. */
-  episode?: Maybe<Array<Maybe<Episode>>>;
-  /** Time at which the character was created in the database. */
-  created?: Maybe<Scalars['String']>;
+  id: number,
+  name: string,
+  image: string,
+  status: string,
+  species: string,
+  type: string;
+  gender: string,
+  location: Location,
+  origin: Location,
+  episode: Episode[],
 };
 
 export type Characters = {
-  __typename?: 'Characters';
-  info?: Maybe<Info>;
-  results?: Maybe<Array<Maybe<Character>>>;
+  results: Character[]
 };
 
 export type Episode = {
@@ -199,3 +183,6 @@ export type QueryEpisodesByIdsArgs = {
   ids: Array<Scalars['ID']>;
 };
 
+export interface AllResponseVars {
+  page: number
+}

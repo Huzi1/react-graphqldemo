@@ -5,16 +5,20 @@ import Navbar from "../sidenav/navbar.component";
 import Slider from "../slider/slider.component";
 import Routes from "../routes/routes.component";
 import { Row, Col } from "react-bootstrap";
-
+import { ApolloProvider } from "@apollo/react-hooks";
+import client from "../../common/apollo/apollo-client";
+import { ApolloClient } from "@apollo/client";
 const App: React.FC = () => {
   return (
     <>
-      <Row style={{ margin: "2%" }}>
-        <Slider />
-      </Row>
+      <ApolloProvider client={client}>
+        <Row style={{ margin: "2%" }}>
+          <Slider />
+        </Row>
 
-      <Navbar />
-      <Routes />
+        <Navbar />
+        <Routes />
+      </ApolloProvider>
     </>
   );
 };
