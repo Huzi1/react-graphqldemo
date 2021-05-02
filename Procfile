@@ -1,1 +1,1 @@
-worker: yarn build
+web: yarn build
