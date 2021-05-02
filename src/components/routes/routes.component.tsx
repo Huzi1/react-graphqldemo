@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "../home/home.component";
-import Characters from "../characters/all.characters.component";
-import Episodes from "../episodes/episodes.component";
+import AllCharacters from "../characters/all.characters.component";
+import AllEpisodes from "../episodes/all.episodes.component";
 
 const Routes: React.FC = () => {
   return (
@@ -10,8 +10,8 @@ const Routes: React.FC = () => {
       <BrowserRouter>
         <Switch>
           <Route path={"/"} component={Home} exact />
-          <Route path={"/Characters"} component={Characters} exact />
-          <Route path={"/Episodes"} component={Episodes} exact />
+          <Route path={"/Characters"} component={AllCharacters} exact />
+          <Route path={"/Episodes"} component={AllEpisodes} exact />
         </Switch>
       </BrowserRouter>
     </>

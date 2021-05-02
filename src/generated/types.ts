@@ -36,29 +36,49 @@ export type Character = {
 
 export type Characters = {
   results: Character[]
+  info: {
+    next: number
+  }
 };
-
+export interface EpisodeData {
+  episodes: Episodes
+}
 export type Episode = {
-  __typename?: 'Episode';
-  /** The id of the episode. */
-  id?: Maybe<Scalars['ID']>;
-  /** The name of the episode. */
-  name?: Maybe<Scalars['String']>;
-  /** The air date of the episode. */
-  air_date?: Maybe<Scalars['String']>;
-  /** The code of the episode. */
-  episode?: Maybe<Scalars['String']>;
-  /** List of characters who have been seen in the episode. */
-  characters?: Maybe<Array<Maybe<Character>>>;
-  /** Time at which the episode was created in the database. */
-  created?: Maybe<Scalars['String']>;
-};
+id: number;
+name: string;
+air_date: string;
+episode: string;
+characters: Character[];
+created: string;
+}
 
-export type Episodes = {
-  __typename?: 'Episodes';
-  info?: Maybe<Info>;
-  results?: Maybe<Array<Maybe<Episode>>>;
-};
+export type Episodes ={
+results: Episode []
+info: {
+  next: number
+}
+}
+// export type Episode = {
+//   __typename?: 'Episode';
+//   /** The id of the episode. */
+//   id?: Maybe<Scalars['ID']>;
+//   /** The name of the episode. */
+//   name?: Maybe<Scalars['String']>;
+//   /** The air date of the episode. */
+//   air_date?: Maybe<Scalars['String']>;
+//   /** The code of the episode. */
+//   episode?: Maybe<Scalars['String']>;
+//   /** List of characters who have been seen in the episode. */
+//   characters?: Maybe<Array<Maybe<Character>>>;
+//   /** Time at which the episode was created in the database. */
+//   created?: Maybe<Scalars['String']>;
+// };
+
+// export type Episodes = {
+//   __typename?: 'Episodes';
+//   info?: Maybe<Info>;
+//   results?: Maybe<Array<Maybe<Episode>>>;
+// };
 
 export type FilterCharacter = {
   name?: Maybe<Scalars['String']>;

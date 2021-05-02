@@ -1,4 +1,17 @@
 body,
 #root {
   background-color: #202831;
+  margin: 0;
+  height: 100%;
+}
+
+html,
+body,
+#app,
+#root,
+.App,
+#app > div {
+  height: 100%;
+  overflow: auto;
+  width: 100%;
 }

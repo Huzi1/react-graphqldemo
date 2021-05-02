@@ -11,7 +11,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 // import { Waypoint } from "react-waypoint";
 import { CallWaypoint } from "../../common/Waypoint";
-import { RectAreaLight } from "three";
 interface items {
   resutls: [
     {
@@ -59,15 +58,7 @@ const AllCharacters: React.FC = () => {
         ];
 
         return fetchMoreResult;
-        // return {
-        //   characters: {
-        //     __typename: "Characters",
-        //     results: [
-        //       ...prev.characters.results,
-        //       ...fetchMoreResult.characters.results,
-        //     ],
-        //   },
-        // };
+      
       },
     });
 
@@ -98,6 +89,7 @@ const AllCharacters: React.FC = () => {
                 indexProp={i}
                 listProp={data.characters.results}
                 fnProps={scrollEnd}
+                next={data.characters.info.next}
               />
             </React.Fragment>
           ))}
