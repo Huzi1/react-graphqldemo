@@ -34,8 +34,8 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts --optimize_for_size --max_old_space_size=460 --gc_interval=100 start",
-    "build": "react-scripts --optimize_for_size --max_old_space_size=460 --gc_interval=100 build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "apollo:generate": " apollo codegen:generate --target typescript  --excludes=node_modules/* --includes=**/*tsx --endpoint https://rickandmortyapi.com/graphql --tagname=gql --outputFlat src/generated",
