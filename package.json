@@ -30,8 +30,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "cross-env PORT=5000 react-scripts start",
+    "build": "cross-env PORT=5000 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "apollo:generate": " apollo codegen:generate --target typescript  --excludes=node_modules/* --includes=**/*tsx --endpoint https://rickandmortyapi.com/graphql --tagname=gql --outputFlat src/generated",
@@ -58,6 +58,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^1.21.3",
     "@graphql-codegen/typescript": "^1.21.1",
-    "@graphql-codegen/typescript-operations": "^1.17.15"
+    "@graphql-codegen/typescript-operations": "^1.17.15",
+    "cross-env": "^7.0.3"
   }
 }

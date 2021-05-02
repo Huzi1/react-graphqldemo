@@ -1,8 +1,9 @@
 import React from "react";
 import { Card, CardGroup } from "react-bootstrap";
-import Container from "react-bootstrap/Container";
+import { Container, Row, Col } from "react-bootstrap";
 import typeS from "../../assets/typeS.png";
 import reactImage from "../../assets/reactImage.png";
+import apollo from "../../assets/apollo.png";
 const Home: React.FC = () => {
   return (
     <>
@@ -16,53 +17,7 @@ const Home: React.FC = () => {
         About App
       </h1>
       <br />
-      <div>
-        <Container>
-          <CardGroup>
-            <Card>
-              <Card.Img variant="top" src={typeS} />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-            <Card>
-              <Card.Img variant="top" src={reactImage} />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This card has supporting text below as a natural lead-in to
-                  additional content.{" "}
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-            <Card>
-              <Card.Img variant="top" src={reactImage} />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-          </CardGroup>
-        </Container>
-      </div>
+
       <p
         style={{
           color: "#7ACD74",
@@ -70,8 +25,105 @@ const Home: React.FC = () => {
           textAlign: "center",
         }}
       >
-        Typescript Graphql Client with infinite scroll
+        Typescript Graphql Client with fetchMore infinite scroll
       </p>
+      <div>
+        <Container>
+          <CardGroup>
+            <Card>
+              <Card.Img variant="top" src={typeS} />
+              <Card.Body>
+                <Card.Title>Typescript</Card.Title>
+                <Card.Text>
+                  Typescript is a stirct syntactical superset of Javascript.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <Card>
+              <Card.Img variant="top" src={reactImage} />
+              <Card.Body>
+                <Card.Title>React</Card.Title>
+                <Card.Text>
+                  ReactJS is a popular frontend library, it is fast scalable and
+                  simple.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <Card>
+              <Card.Img variant="top" src={apollo} />
+              <Card.Body>
+                <Card.Title>Apollo client for Graphql</Card.Title>
+                <Card.Text>
+                  Apollo Client is a comprehensive state management library for
+                  Javascript that enables you to manage both local and remote
+                  data with GraphQL.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </CardGroup>
+        </Container>
+        <Container style={{ padding: "2%" }}>
+          <Row>
+            <Col>
+              <h2
+                style={{
+                  fontSize: "2em",
+                  margin: "0.67em 0",
+                  color: "#7ACD74",
+                  fontFamily: "fantasy",
+                  textAlign: "center",
+                }}
+              >
+                About Me
+              </h2>
+              <p
+                style={{
+                  fontSize: "1em",
+                  margin: "0.67em 0",
+                  color: "#7ACD74",
+                  fontFamily: "fantasy",
+                  textAlign: "center",
+                }}
+              >
+                <strong>
+                  {" "}
+                  " I am a full stack software developer based in Melbourne,
+                  Australia. I like to explore new languages, frameworks and
+                  cloud services. I am a recent graduate from RMIT University in
+                  masters of information technology specialized in software
+                  engineering "
+                </strong>
+              </p>
+              <div style={{ textAlign: "center" }}>
+                <a href="https://github.com/Huzi1">
+                  <img
+                    alt="Github"
+                    src="https://img.icons8.com/nolan/64/github.png"
+                  />
+                </a>
+                <a href="https://www.linkedin.com/in/yamin-huzaifa">
+                  <img
+                    alt="Linkedin"
+                    src="https://img.icons8.com/nolan/64/linkedin.png"
+                  />
+                </a>
+                <a href="https://twitter.com/huzaifa_saleem1">
+                  <img
+                    alt="twitter"
+                    src="https://img.icons8.com/nolan/64/twitter.png"
+                  />
+                </a>
+                <a href="https://www.yaminhuzaifa.xyz">
+                  <img
+                    alt="Portfolio website"
+                    src="https://img.icons8.com/nolan/64/new-contact.png"
+                  />
+                </a>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </>
   );
 };

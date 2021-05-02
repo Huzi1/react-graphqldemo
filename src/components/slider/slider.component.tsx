@@ -17,8 +17,11 @@ const Slider: React.FC = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Rick Sanchez</h3>
+            <p>
+              "The universe is basically an animal. It grazes on the ordinary.
+              It creates infinite idiots just to eat them."
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={1000}>
@@ -30,8 +33,8 @@ const Slider: React.FC = () => {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Rick Sanchez</h3>
+            <p>"To live is to risk it all"</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={1000}>
@@ -43,10 +46,8 @@ const Slider: React.FC = () => {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <h3>Rick Sanchez</h3>
+            <p>"Sometimes Science Is More Art Than Science, Morty"</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

@@ -3,10 +3,10 @@ import { GET_EPISODES } from "../../common/hooks/useGetEpisodes";
 import { useQuery } from "@apollo/client";
 import { EpisodeData, AllResponseVars, Episode } from "../../generated/types";
 import Row from "react-bootstrap/Row";
-import { onError } from "apollo-link-error";
 import { CallWaypoint } from "../../common/Waypoint";
 import { Container } from "react-bootstrap";
 import EpisodeList from "./episodes.component";
+import Spinner from "react-bootstrap/Spinner";
 
 const AllEpisodes: React.FC = () => {
   const { loading, data, error, fetchMore } = useQuery<
@@ -19,7 +19,19 @@ const AllEpisodes: React.FC = () => {
   var episodes = loading || !data ? [] : data.episodes.results;
 
   if (loading || !data)
-    return <h2 style={{ color: "#7ACD74", fontFamily: "fantasy" }}>Loading</h2>;
+    return (
+      <Container fluid style={{ margin: "2%" }}>
+        {" "}
+        <Row className="justify-content-md-center">
+          <Spinner variant="success" animation="grow" />
+
+          <h3 style={{ color: "#7ACD74", fontFamily: "fantasy" }}>
+            {" "}
+            Loading...
+          </h3>
+        </Row>
+      </Container>
+    );
 
   if (error)
     return (
@@ -34,8 +46,6 @@ const AllEpisodes: React.FC = () => {
         page: episodes.length / 20 + 1,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        console.log("prev", prev, data);
-        console.log("fetchMore", fetchMoreResult);
         if (!fetchMoreResult || data.episodes.info.next === null) return prev;
 
         fetchMoreResult.episodes.results = [
@@ -56,7 +66,10 @@ const AllEpisodes: React.FC = () => {
         </h1>
       </Row>
       <Container fluid>
-        <Row style={{ padding: "0.5%", margin: "0.5%" }}>
+        <Row
+          className="justify-content-md-center"
+          style={{ padding: "0.5%", margin: "0.5%" }}
+        >
           {data.episodes.results.map((items: Episode, i: number) => (
             <React.Fragment key={Math.random()}>
               <EpisodeList

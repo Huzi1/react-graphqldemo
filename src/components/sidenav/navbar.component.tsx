@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Nav from "react-bootstrap/Nav";
 import "./navbar.component.css";
 
@@ -14,11 +14,6 @@ const NavBar: React.FC = () => {
         </Nav.Item>
         <Nav.Item>
           <Nav.Link href="/Episodes">Episodes</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="Search" disabled>
-            Disabled
-          </Nav.Link>
         </Nav.Item>
       </Nav>
     </>

@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, Row, Col } from "react-bootstrap";
-import moment from "moment-timezone";
+import { Card, Col } from "react-bootstrap";
+
 interface Props {
   id: number;
   name: string;
@@ -10,43 +10,36 @@ interface Props {
   created: string;
 }
 const EpisodeList: React.FC<Props> = (props) => {
-  const { id, name, air_date, episode, created } = props;
-  // const momentTz = moment(air_date);
-  // console.log(moment.tz("Australia/Sydney").format("MMMM Do YYYY"));
+  const { id, name, air_date, episode } = props;
+
   return (
     <>
-      <Col style={{ padding: "0.5%", margin: "0.5%" }}>
-        <Card style={{ width: "15rem" }} bg={"info"}>
-          <Card.Title
-            style={{
-              color: "#7ACD74",
-              fontFamily: "fantasy",
-              textAlign: "center",
-            }}
-          >
-            {name}
-          </Card.Title>
-          <Card.Subtitle className="mb-2 " style={{ textAlign: "center" }}>
-            {episode}
-          </Card.Subtitle>
-          <Card.Text>
-            <p
+      <div>
+        <Col style={{ padding: "0.5%", margin: "0.5%" }}>
+          <Card style={{ width: "20rem", height: "10rem" }} bg={"info"}>
+            <Card.Header
               style={{
-                padding: "1em0",
-                margin: "0",
+                color: "#7ACD74",
+                fontFamily: "fantasy",
                 textAlign: "center",
               }}
             >
-              <strong>Air_date: </strong>
-              {air_date}
+              {name}
+            </Card.Header>
+            <Card.Body>
+              <Card.Title style={{ textAlign: "center" }}>{episode}</Card.Title>
+              <Card.Text style={{ textAlign: "center" }}>
+                <strong>Air_date: </strong>
+                {air_date}
 
-              <br />
-              <strong>ID:</strong>
-              {id}
-            </p>
-          </Card.Text>
-        </Card>
-      </Col>
+                <br />
+                <strong>ID:</strong>
+                {id}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </div>
     </>
   );
 };

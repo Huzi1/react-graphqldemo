@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Characters } from "../../generated/types";
+import React from "react";
+
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const CharacetersList: React.FC<Props> = (props) => {
-  const { gender, id, image, species, status, type, name } = props;
+  const { gender, id, image, species, status, name } = props;
 
   return (
     <>
@@ -23,13 +23,11 @@ const CharacetersList: React.FC<Props> = (props) => {
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Text>
-              <p>
-                <strong>Gender: </strong> {gender}
-                <br />
-                <strong>Id: </strong> {id}
-                <br />
-                <strong>Species: </strong> {species}
-              </p>
+              <strong>Gender: </strong> {gender}
+              <br />
+              <strong>Id: </strong> {id}
+              <br />
+              <strong>Species: </strong> {species}
             </Card.Text>
           </Card.Body>
           <Card.Footer>

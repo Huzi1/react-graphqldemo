@@ -9,20 +9,20 @@ import {
 import CharactersList from "./charactersList.component";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-// import { Waypoint } from "react-waypoint";
+import Spinner from "react-bootstrap/Spinner";
 import { CallWaypoint } from "../../common/Waypoint";
-interface items {
-  resutls: [
-    {
-      gender: String;
-      id?: number;
-      image?: String;
-      species?: String;
-      status?: String;
-      type?: String;
-    }
-  ];
-}
+// interface items {
+//   resutls: [
+//     {
+//       gender: String;
+//       id?: number;
+//       image?: String;
+//       species?: String;
+//       status?: String;
+//       type?: String;
+//     }
+//   ];
+// }
 
 const AllCharacters: React.FC = () => {
   // const { data, loading, error } = useQuery<GetUsers, GetUsersVariables>(GET_USERS)
@@ -33,14 +33,23 @@ const AllCharacters: React.FC = () => {
     variables: { page: 1 },
   });
   var characters = loading || !data ? [] : data.characters.results;
-  if (loading || !data) return <h2>Loading .....</h2>;
+  if (loading || !data)
+    return (
+      <Container fluid style={{ margin: "2%" }}>
+        {" "}
+        <Row className="justify-content-md-center">
+          <Spinner variant="success" animation="grow" />
+
+          <h3 style={{ color: "#7ACD74", fontFamily: "fantasy" }}>
+            {" "}
+            Loading...
+          </h3>
+        </Row>
+      </Container>
+    );
 
   if (error) return <div>Error!!!</div>;
-  if (!data) {
-    console.log("no data");
-  } else {
-    console.log(data.characters.results);
-  }
+
   // Infinite scrolling
 
   const scrollEnd = () =>
@@ -49,8 +58,6 @@ const AllCharacters: React.FC = () => {
         page: characters.length / 20 + 1,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        console.log("prev", prev);
-        console.log("fetchMore", fetchMoreResult);
         if (!fetchMoreResult) return prev;
         fetchMoreResult.characters.results = [
           ...prev.characters.results,
@@ -58,7 +65,6 @@ const AllCharacters: React.FC = () => {
         ];
 
         return fetchMoreResult;
-      
       },
     });
 

@@ -4,10 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "../sidenav/navbar.component";
 import Slider from "../slider/slider.component";
 import Routes from "../routes/routes.component";
-import { Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import { ApolloProvider } from "@apollo/react-hooks";
 import client from "../../common/apollo/apollo-client";
-import { ApolloClient } from "@apollo/client";
+
 const App: React.FC = () => {
   return (
     <>
